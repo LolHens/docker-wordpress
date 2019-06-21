@@ -7,7 +7,7 @@ RUN chmod +x "/usr/local/bin/cleanimage"
 
 COPY ["msmtprc", "/etc/"]
 
-RUN echo 'postfix postfix/mailname string example.com' | debconf-set-selections \
+RUN echo 'example.com' > /etc/mailname \
  && apt-get update \
  && apt-get install -y \
       msmtp \
