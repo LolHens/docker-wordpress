@@ -17,4 +17,5 @@ RUN echo 'postfix postfix/main_mailer_type select Internet Site' | debconf-set-s
  && sed -i '/exec "$@"/ i\service rsyslog start' /usr/local/bin/docker-entrypoint.sh \
  && sed -i '/exec "$@"/ i\service postfix start' /usr/local/bin/docker-entrypoint.sh \
  && sed -i '/exec "$@"/ i\\' /usr/local/bin/docker-entrypoint.sh \
+ && echo 'sendmail_path=sendmail -t -i' >> /usr/local/etc/php/conf.d/sendmail.ini \
  && cleanimage
