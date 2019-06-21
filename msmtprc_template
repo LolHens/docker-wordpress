@@ -1,0 +1,9 @@
+account smtp
+host $MSMTP_HOST
+from $MSMTP_FROM
+
+auth $MSMTP_AUTH_ENABLED
+user $MSMTP_AUTH_USER
+password $MSMTP_AUTH_PASSWORD
+
+account default : smtp
