@@ -7,7 +7,8 @@ RUN chmod +x "/usr/local/bin/cleanimage"
 
 COPY ["msmtprc", "/etc/"]
 
-RUN apt-get update \
+RUN echo 'postfix postfix/mailname string example.com' | debconf-set-selections \
+ && apt-get update \
  && apt-get install -y \
       msmtp \
       nano \
