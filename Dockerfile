@@ -6,7 +6,7 @@ ADD ["https://raw.githubusercontent.com/LolHens/docker-tools/master/bin/cleanima
 RUN chmod +x "/usr/local/bin/cleanimage"
 
 RUN echo 'postfix postfix/main_mailer_type select Internet Site' | debconf-set-selections \
- && echo 'postfix postfix/mailname string gitlab.example.com' | debconf-set-selections \
+ && echo 'postfix postfix/mailname string wordpress.example.com' | debconf-set-selections \
  && apt-get update \
  && apt-get install -y \
       rsyslog \
